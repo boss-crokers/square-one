@@ -1,0 +1,210 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* No fixed height on container level, rely on content */
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color var(--transition-medium), box-shadow var(--transition-medium), backdrop-filter var(--transition-medium);
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+}
+
+.header-top-bar {
+    width: 100%;
+    overflow: hidden;
+    max-height: 50px;
+    /* Approximate height of TopBar */
+    transition: max-height var(--transition-medium), opacity var(--transition-medium);
+}
+
+.header-top-bar.hidden {
+    max-height: 0;
+    opacity: 0;
+}
+
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header.scrolled .logo-text {
+    color: var(--color-primary);
+}
+
+.header.scrolled .nav-link {
+    color: var(--color-text-main);
+}
+
+/* Main container needs relative positioning for absolute children */
+.header-content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /* Push nav to right since logo is absolute left */
+    align-items: center;
+    position: relative;
+    height: var(--header-height);
+    /* Enforce height for the main bar */
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: all var(--transition-medium);
+}
+
+/* When scrolled, reset to normal flex flow behavior or keep it absolute but smaller */
+
+.header.scrolled .logo a {
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    padding-top: 5px;
+}
+
+.logo-img {
+    height: 180px;
+    /* Increased to 180px */
+    width: auto;
+    object-fit: contain;
+    transition: all var(--transition-medium);
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    /* Make logo white for contrast on dark bg */
+}
+
+.header.scrolled .logo-img {
+    height: 60px;
+    /* Fits comfortably in the 80px header */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    /* Reset filter to show original colors, keep subtle shadow */
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 70px;
+        /* Slightly smaller for better fit */
+    }
+
+    .header.scrolled .logo-img {
+        height: 44px;
+    }
+
+    .logo a {
+        padding: 4px 8px;
+        /* Reduced padding for cleaner look */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 60px;
+    }
+}
+
+.nav-list {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-right: var(--spacing-xl);
+    /* Increased spacing */
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--color-white);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-accent);
+    transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--color-white);
+    z-index: 1002;
+    padding: 8px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+
+.header.scrolled .mobile-menu-btn {
+    color: var(--color-primary);
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+/* Mobile Nav */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-white);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    padding: 100px 40px;
+    transition: right var(--transition-medium);
+    z-index: 1001;
+}
+
+.mobile-nav.open {
+    right: 0;
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.mobile-nav-list a {
+    color: var(--color-primary);
+}
+
+.mobile-cta {
+    margin-top: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}

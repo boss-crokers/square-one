@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary: #0A192F;
+  /* Deep Navy */
+  --color-primary-light: #172A45;
+  --color-accent: #FFD700;
+  /* Gold */
+  --color-accent-hover: #E5C100;
+  --color-text-main: #0A192F;
+  --color-text-light: #8892b0;
+  --color-text-white: #e6f1ff;
+  --color-background: #F8F9FA;
+  --color-white: #ffffff;
+  --color-error: #e63946;
+  --color-success: #2a9d8f;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2.5rem;
+  /* Increased from 2rem */
+  --spacing-lg: 6rem;
+  /* Increased from 4rem - Main section padding */
+  --spacing-xl: 10rem;
+  /* Increased from 8rem */
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+
+  /* Container */
+  --container-width: 1200px;
+  --header-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Ruler Scrollbar */
+::-webkit-scrollbar {
+  width: 28px;
+  /* Slightly wider to accommodate ruler markings */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #eac086;
+  /* Classic yellow wood ruler color */
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, transparent 10%, transparent 90%, rgba(0, 0, 0, 0.1) 100%),
+    /* Bevel/Roundness feel */
+    url("./assets/ruler-tall.svg");
+  background-repeat: repeat-y;
+  /* It repeats if page is > 5000px */
+  border-left: 1px solid #8b5a2b;
+  /* Dark wood edge */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(139, 90, 43, 0.5);
+  /* See-through thumb to keep ruler visible */
+  border: 1px solid #5e3b1f;
+  border-radius: 2px;
+  backdrop-filter: blur(1px);
+  /* Slight blur for effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(139, 90, 43, 0.7);
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-white {
+  color: var(--color-text-white);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+/* Components */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.section {
+  padding: var(--spacing-lg) 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  padding: 8px;
+  z-index: 1000;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}

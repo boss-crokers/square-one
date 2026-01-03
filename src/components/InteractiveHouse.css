@@ -1,0 +1,170 @@
+.house-diagram-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-md) 0;
+}
+
+.house-diagram-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.house-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hotspot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    /* Gold */
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    animation: pulse 2s infinite;
+}
+
+.hotspot:hover,
+.hotspot.active {
+    background-color: var(--color-primary);
+    /* Navy */
+    color: var(--color-accent);
+    transform: translate(-50%, -50%) scale(1.2);
+    animation: none;
+}
+
+.hotspot-modal {
+    position: absolute;
+    width: 280px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    z-index: 20;
+    border-left: 5px solid var(--color-accent);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transform: scale(0.9) translate(-50%, 0);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.hotspot-modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.hotspot-modal.show[style*="translate(-50%, 20px)"] {
+    transform: scale(1) translate(-50%, 20px) !important;
+}
+
+.hotspot-modal.show[style*="translate(-50%, calc(-100% - 20px))"] {
+    transform: scale(1) translate(-50%, calc(-100% - 20px)) !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hotspot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.hotspot-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    cursor: pointer;
+    padding: 4px;
+}
+
+.close-btn:hover {
+    color: var(--color-primary);
+}
+
+.hotspot-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width: 600px) {
+    .hotspot-modal {
+        width: 90%;
+        left: 50% !important;
+        /* Override inline style */
+        transform: translate(-50%, 0) !important;
+        /* Center horizontally, reset vertical */
+        top: 50% !important;
+        /* Center vertically */
+        margin-top: 0;
+    }
+
+    /* Adjust logic to simply center it over the map for simplicity on mobile, or bottom sheet? */
+    /* Let's try centering it in the container for best visibility */
+}

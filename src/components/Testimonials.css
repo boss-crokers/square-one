@@ -1,0 +1,141 @@
+.reviews-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.google-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.google-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: #fff;
+    padding: 12px 24px;
+    border-radius: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.google-rating-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rating-score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-text-main);
+}
+
+.review-count {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+}
+
+.google-review-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.google-review-card:hover {
+    transform: translateY(-8px) scale(1.02) rotate(1deg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-accent);
+}
+
+.google-review-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-accent);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.google-review-card:hover::after {
+    transform: scaleY(1);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+}
+
+.reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #efefef;
+    /* Fallback */
+    background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+    /* Random-ish generic avatar color */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-time {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+}
+
+.google-icon-small {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.8;
+    transform: scale(0.8);
+}
+
+.review-text {
+    font-style: normal;
+    /* Google reviews aren't usually italic */
+    color: var(--color-text-main);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.btn-outline {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: white;
+}

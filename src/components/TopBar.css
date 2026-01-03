@@ -1,0 +1,43 @@
+.top-bar {
+    background-color: #2D9CDB;
+    /* Social Blue Color */
+    padding: 8px 0;
+    color: white;
+    z-index: 1001;
+    /* Above header if needed, but usually stacks */
+    position: relative;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 32px;
+    /* Wide spacing as seen in image */
+    align-items: center;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+    opacity: 0.9;
+}
+
+.social-icons a:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+}
+
+/* Adjust main header to not overlap if it's fixed */
+/* Since Header is fixed, we might need to push the page down or make TopBar fixed too. 
+   If Header is top:0, TopBar should sit above it. 
+   Option 1: TopBar is static, Header is sticky/fixed below it.
+   Option 2: TopBar is absolute/fixed at top, Header is below using top: X px.
+*/
