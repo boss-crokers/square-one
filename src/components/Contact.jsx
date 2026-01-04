@@ -20,13 +20,7 @@ const Contact = () => {
                                     <a href="tel:5162429556">(516) 242-9556</a>
                                 </div>
                             </li>
-                            <li>
-                                <div className="icon-box"><Mail size={20} /></div>
-                                <div>
-                                    <h4>Email</h4>
-                                    <a href="mailto:info@squareonehomeinspectors.com">info@squareonehomeinspectors.com</a>
-                                </div>
-                            </li>
+
                             <li>
                                 <div className="icon-box"><MapPin size={20} /></div>
                                 <div>
