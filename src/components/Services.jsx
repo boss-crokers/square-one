@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Home, Droplets, Wind, Search, FlaskConical, ShieldCheck, X, Activity } from 'lucide-react';
+import { Home, Droplets, Wind, Search, FlaskConical, ShieldCheck, X, Activity, ThermometerSun } from 'lucide-react';
 import './Services.css';
 
 import imgHome from '../assets/service-home.png';
@@ -10,6 +10,7 @@ import imgMold from '../assets/service-mold.png';
 import imgWater from '../assets/service-water.png';
 import imgTermite from '../assets/service-termite.png';
 import imgRadon from '../assets/service-radon.png';
+import imgThermal from '../assets/service-thermal.png';
 
 const services = [
     {
@@ -60,6 +61,13 @@ const services = [
         description: 'Detection of wood-destroying insects that can compromise structural integrity.',
         fullText: "Don’t let bugs ruin your summer. Now that it’s warmer out, these little critters are going to be coming out of the woodwork and your home is the perfect place to make a nest. With an inspection from Square One Professional Home Inspectors, you could save thousands of dollars in repairs with preventative maintenance inspections. We check for termites, carpenter ants, and other wood-destroying organisms.",
         image: imgTermite
+    },
+    {
+        icon: <ThermometerSun size={40} />,
+        title: 'Thermal Imaging',
+        description: 'Advanced infrared technology to detect hidden moisture, missing insulation, and electrical hotspots.',
+        fullText: "See what the naked eye cannot. Our thermal imaging services use state-of-the-art infrared cameras to detect temperature variations behind walls and ceilings. This advanced technology helps us identify hidden water leaks, missing insulation, electrical overheating, and energy loss areas that traditional inspection methods might miss. It provides a deeper level of insight into the home's condition, giving you greater peace of mind.",
+        image: imgThermal
     },
 ];
 
