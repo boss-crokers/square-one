@@ -40,18 +40,18 @@ const Contact = () => {
 
                     <div className="contact-form-wrapper">
                         <h3 className="text-primary mb-sm">Request a Call Back</h3>
-                        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                        <form className="contact-form" action="https://formspree.io/f/mzdzklbb" method="POST">
                             <div className="form-group">
                                 <label>Name</label>
-                                <input type="text" placeholder="Your Name" required />
+                                <input type="text" name="name" placeholder="Your Name" required />
                             </div>
                             <div className="form-group">
                                 <label>Phone</label>
-                                <input type="tel" placeholder="(555) 555-5555" required />
+                                <input type="tel" name="phone" placeholder="(555) 555-5555" required />
                             </div>
                             <div className="form-group">
                                 <label>Service Needed</label>
-                                <select>
+                                <select name="service">
                                     <option>Home Inspection</option>
                                     <option>Commercial Inspection</option>
                                     <option>Mold Testing</option>
@@ -60,7 +60,7 @@ const Contact = () => {
                             </div>
                             <div className="form-group">
                                 <label>Message</label>
-                                <textarea rows="4" placeholder="How can we help you?"></textarea>
+                                <textarea name="message" rows="4" placeholder="How can we help you?"></textarea>
                             </div>
                             <button type="submit" className="btn btn-primary display-block width-100">Send Request</button>
                         </form>

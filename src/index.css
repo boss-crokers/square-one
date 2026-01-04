@@ -226,8 +226,19 @@ button {
   background: transparent;
 }
 
+
 .btn-outline:hover {
   background-color: rgba(255, 215, 0, 0.1);
+}
+
+.btn-outline-white {
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  background: transparent;
+}
+
+.btn-outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .section {
@@ -263,4 +274,54 @@ button {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  header,
+  footer,
+  .skip-link,
+  .hero,
+  #interactive-house,
+  .scroll-reveal,
+  .mobile-cta,
+  .back-to-top {
+    display: none !important;
+  }
+
+  /* Reset scroll reveal visibility for printed content */
+  .scroll-reveal.visible,
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    visibility: visible !important;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: black !important;
+    page-break-after: avoid;
+  }
+
+  p,
+  ul {
+    page-break-inside: avoid;
+  }
 }

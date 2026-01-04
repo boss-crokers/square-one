@@ -16,7 +16,14 @@ import TrustStats from './components/TrustStats';
 import MobileFloatingCTA from './components/MobileFloatingCTA';
 import BackToTop from './components/BackToTop';
 
+import NotFound from './components/NotFound';
+
 function App() {
+  // Simple client-side routing check
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    return <NotFound />;
+  }
+
   return (
     <div className="app">
       <Header />

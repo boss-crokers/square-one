@@ -26,7 +26,7 @@ const Hero = () => {
                         Schedule Inspection
                         <ArrowRight size={20} style={{ marginLeft: '8px' }} />
                     </a>
-                    <a href="#services" className="btn btn-outline">
+                    <a href="#services" className="btn btn-outline-white">
                         View Services
                     </a>
                 </div>
