@@ -17,7 +17,7 @@ const TopBar = () => {
                     <a href="https://www.instagram.com/squareone_inspectors/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <Instagram size={20} />
                     </a>
-                    <a href="mailto:squareoneinspect@aol.com" aria-label="Email">
+                    <a href="mailto:squareoneinspect@gmail.com" aria-label="Email">
                         <Mail size={20} />
                     </a>
                 </div>
