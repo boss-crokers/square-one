@@ -56,6 +56,7 @@
     font-size: 0.9rem;
 }
 
+/* Base Input Styles */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -64,7 +65,7 @@
     border-radius: 4px;
     font-family: inherit;
     font-size: 1rem;
-    transition: border-color var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .form-group input:focus,
@@ -72,6 +73,51 @@
 .form-group textarea:focus {
     border-color: var(--color-accent);
     outline: none;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.1);
+}
+
+/* Floating Label Specific */
+.form-group.floating {
+    position: relative;
+    padding-top: 0;
+}
+
+.form-group.floating input,
+.form-group.floating textarea {
+    padding: 20px 12px 8px;
+    /* Extra top padding for label */
+    border: none;
+    border-bottom: 2px solid #ddd;
+    border-radius: 4px 4px 0 0;
+    background-color: rgba(10, 25, 47, 0.02);
+}
+
+.form-group.floating label {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    font-size: 1rem;
+    color: var(--color-text-light);
+    transition: all 0.2s ease;
+    pointer-events: none;
+    font-weight: 400;
+}
+
+.form-group.floating input:focus,
+.form-group.floating textarea:focus {
+    border-bottom-color: var(--color-accent);
+    background-color: rgba(10, 25, 47, 0.05);
+    box-shadow: none;
+}
+
+.form-group.floating input:focus~label,
+.form-group.floating input:not(:placeholder-shown)~label,
+.form-group.floating textarea:focus~label,
+.form-group.floating textarea:not(:placeholder-shown)~label {
+    top: 4px;
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    font-weight: 600;
 }
 
 .width-100 {

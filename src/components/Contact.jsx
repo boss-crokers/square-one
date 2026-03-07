@@ -41,13 +41,13 @@ const Contact = () => {
                     <div className="contact-form-wrapper">
                         <h3 className="text-primary mb-sm">Request a Call Back</h3>
                         <form className="contact-form" action="https://formspree.io/f/mzdzklbb" method="POST">
-                            <div className="form-group">
-                                <label>Name</label>
-                                <input type="text" name="name" placeholder="Your Name" required />
+                            <div className="form-group floating">
+                                <input type="text" id="name" name="name" placeholder=" " required />
+                                <label htmlFor="name">Your Name</label>
                             </div>
-                            <div className="form-group">
-                                <label>Phone</label>
-                                <input type="tel" name="phone" placeholder="(555) 555-5555" required />
+                            <div className="form-group floating">
+                                <input type="tel" id="phone" name="phone" placeholder=" " required />
+                                <label htmlFor="phone">Phone Number</label>
                             </div>
                             <div className="form-group">
                                 <label>Service Needed</label>
@@ -58,9 +58,9 @@ const Contact = () => {
                                     <option>Other</option>
                                 </select>
                             </div>
-                            <div className="form-group">
-                                <label>Message</label>
-                                <textarea name="message" rows="4" placeholder="How can we help you?"></textarea>
+                            <div className="form-group floating">
+                                <textarea id="message" name="message" rows="4" placeholder=" "></textarea>
+                                <label htmlFor="message">How can we help you?</label>
                             </div>
                             <button type="submit" className="btn btn-primary display-block width-100">Send Request</button>
                         </form>

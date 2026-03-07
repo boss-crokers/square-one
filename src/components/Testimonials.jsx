@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Star } from 'lucide-react';
 import './Testimonials.css';
 
@@ -35,9 +36,73 @@ const reviews = [
         stars: 5,
         time: "3 days ago"
     },
+    {
+        id: 4,
+        name: "David K.",
+        location: "Levittown, NY",
+        text: "Excellent service. Vinny arrived early and checked every nook and cranny. His report was comprehensive and helped us negotiate repairs.",
+        stars: 5,
+        time: "1 week ago"
+    },
+    {
+        id: 5,
+        name: "Emily W.",
+        location: "Hicksville, NY",
+        text: "I was impressed by the level of detail in the inspection. Vinny took the time to walk me through the major findings. Very knowledgeable.",
+        stars: 5,
+        time: "3 weeks ago"
+    },
+    {
+        id: 6,
+        name: "Robert P.",
+        location: "Wantagh, NY",
+        text: "Great experience with Square One. The report was detailed with photos and delivered promptly. Will definitely recommend to friends.",
+        stars: 5,
+        time: "4 days ago"
+    },
+    {
+        id: 7,
+        name: "Lisa M.",
+        location: "Farmingdale, NY",
+        text: "Vinny is the best! He found issues that other inspectors might have missed. He's honest and trustworthy. Thank you for your help!",
+        stars: 5,
+        time: "1 month ago"
+    },
+    {
+        id: 8,
+        name: "Chris B.",
+        location: "Merrick, NY",
+        text: "Very professional and thorough inspection. The report was easy to understand. I feel much more confident about my home purchase now.",
+        stars: 5,
+        time: "2 days ago"
+    },
+    {
+        id: 9,
+        name: "Amanda S.",
+        location: "Bellmore, NY",
+        text: "Highly recommend Vinny! He was patient with all our questions and provided a very detailed report. Great value for the service.",
+        stars: 5,
+        time: "5 days ago"
+    }
 ];
 
 const Testimonials = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 3) % reviews.length);
+        }, 15000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const displayedReviews = [
+        reviews[currentIndex],
+        reviews[(currentIndex + 1) % reviews.length],
+        reviews[(currentIndex + 2) % reviews.length]
+    ];
+
     return (
         <section className="section bg-background" id="reviews">
             <div className="container">
@@ -68,7 +133,7 @@ const Testimonials = () => {
                 </div>
 
                 <div className="reviews-grid grid">
-                    {reviews.map((review) => (
+                    {displayedReviews.map((review) => (
                         <div className="google-review-card" key={review.id}>
                             <div className="review-header mb-sm">
                                 <div className="reviewer-avatar">

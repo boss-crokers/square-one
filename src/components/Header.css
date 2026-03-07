@@ -56,9 +56,14 @@
 
 .logo {
     position: absolute;
-    top: 0;
+    top: -36px;
     left: 0;
     z-index: 20;
+    transition: top var(--transition-medium);
+}
+
+.header.scrolled .logo {
+    top: 0;
 }
 
 .logo a {
@@ -83,8 +88,8 @@
 }
 
 .logo-img {
-    height: 216px;
-    /* Increased 20% from 180px */
+    height: 364px;
+    /* Increased another 30% from 280px */
     width: auto;
     object-fit: contain;
     transition: all var(--transition-medium);
@@ -93,20 +98,20 @@
 }
 
 .header.scrolled .logo-img {
-    height: 72px;
-    /* Increased 20% from 60px */
+    height: 70px;
+    /* Adjusted to fit within 80px header */
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     /* Reset filter to show original colors, keep subtle shadow */
 }
 
 @media (max-width: 768px) {
     .logo-img {
-        height: 84px;
-        /* Slightly smaller for better fit */
+        height: 143px;
+        /* Increased from 110px */
     }
 
     .header.scrolled .logo-img {
-        height: 53px;
+        height: 60px;
     }
 
     .logo a {
@@ -117,7 +122,7 @@
 
 @media (max-width: 480px) {
     .logo-img {
-        height: 72px;
+        height: 117px;
     }
 }
 

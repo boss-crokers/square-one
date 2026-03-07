@@ -23,6 +23,17 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    animation: kenBurns 20s ease-out infinite alternate;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .hero-overlay {
@@ -106,8 +117,29 @@
     height: auto;
     z-index: 5;
     opacity: 0.75;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
-    animation: fadeInUp 0.8s ease-out 0.6s backwards;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+    animation: fadeInUp 0.8s ease-out 0.6s backwards, floatBadge 4s ease-in-out infinite 1.4s;
+    transition: all 0.3s ease;
+}
+
+.hero-cmi-badge:hover {
+    opacity: 1;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.5));
+    width: 105px;
+}
+
+@keyframes floatBadge {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
