@@ -115,6 +115,10 @@
         /* Increased from 143px and constrained width */
     }
 
+    .header.scrolled .logo {
+        left: 20px;
+    }
+
     .header.scrolled .logo-img {
         height: 75px;
     }
