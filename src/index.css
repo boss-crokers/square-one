@@ -8,8 +8,11 @@
   --color-accent: #FFD700;
   /* Gold */
   --color-accent-hover: #E5C100;
+  --color-accent-dark: #855800;
+  /* High-contrast gold/amber for light backgrounds */
   --color-text-main: #0A192F;
-  --color-text-light: #8892b0;
+  --color-text-light: #505b76;
+  /* High-contrast slate grey */
   --color-text-white: #e6f1ff;
   --color-background: #F8F9FA;
   --color-white: #ffffff;
@@ -304,6 +307,30 @@ button {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* Global Focus Outline */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Specific focus indicator rules for links and buttons */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Focus colors for elements on dark backgrounds */
+.bg-primary :focus-visible,
+.footer :focus-visible,
+.header:not(.scrolled) :focus-visible,
+.top-bar :focus-visible {
+  outline-color: var(--color-accent) !important;
 }
 
 /* Print Styles */

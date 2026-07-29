@@ -126,7 +126,7 @@ const Services = () => {
                             </div>
                             <h3 className="service-title">{service.title}</h3>
                             <p className="service-description">{service.description}</p>
-                            <span className="learn-more text-accent mt-sm block font-medium text-sm">Read More →</span>
+                            <span className="learn-more mt-sm block font-medium text-sm">Read More →</span>
                         </div>
                     ))}
                 </div>
@@ -147,7 +147,7 @@ const Services = () => {
                         </button>
                         <div className="modal-body grid">
                             <div className="modal-image">
-                                <img src={selectedService.image} alt={selectedService.title} loading="lazy" />
+                                <img src={selectedService.image} alt={`${selectedService.title} - Square One Professional Home Inspection`} loading="lazy" />
                             </div>
                             <div className="modal-text">
                                 <div className="modal-icon-wrapper mb-sm text-accent">

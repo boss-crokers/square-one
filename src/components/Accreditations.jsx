@@ -11,35 +11,44 @@ const Accreditations = () => {
     console.log("Accreditations component rendering - V2");
     const items = [
         {
-            label: "Certified Master Inspector",
+            label: "InterNACHI Certified Master Inspector profile",
             url: "https://www.nachi.org/certified-inspectors/vincent-fundaro-nys-16000066020-41515",
             src: cmiLogoV2,
             className: "cmi-logo"
         },
         {
-            label: "The New York Times",
+            label: "The New York Times feature article: Home Inspectors on Their Weirdest Discoveries",
             url: "https://www.nytimes.com/2017/03/24/realestate/home-inspectors-on-their-weirdest-discoveries.html",
             src: nytLogo
         },
         {
-            label: "Yelp Reviews",
+            label: "Square One 5-star reviews on Yelp",
             url: "https://www.yelp.com/biz/square-one-professional-home-inspectors-levittown",
             src: yelpLogo
         },
         {
-            label: "InterNACHI Certified Electrical Inspector",
+            label: "InterNACHI Certified Electrical Inspector verification page",
             url: "https://www.nachi.org/verify",
             src: electricalLogo
         },
         {
-            label: "Honor Guarantee",
+            label: "InterNACHI Honor Guarantee details",
             url: "https://www.nachi.org/honor.htm",
             src: honorLogo
         },
         {
-            label: "Structure & Foundation Inspector",
+            label: "Structure and Foundation Inspector Certification verification page",
             url: "https://www.nachi.org/verify",
             src: structureLogo
+        },
+        {
+            label: "Square One Chamber of Commerce member page",
+            url: "https://www.chamberofcommerce.com/business-directory/new-york/levittown/home-inspector/2034328730-square-one-professional-home-inspectors-inc?source=memberwebsite",
+            src: "https://coc.codes/images/badge/2034328730",
+            id: "COCBadgeURL",
+            imgId: "COCBadgeIMG",
+            target: "_tab",
+            className: "coc-badge"
         }
     ];
 
@@ -49,13 +58,21 @@ const Accreditations = () => {
                 {items.map((item, index) => (
                     <a
                         key={index}
+                        id={item.id}
                         href={item.url}
                         className={`accreditation-item ${item.className || ''}`}
-                        aria-label={item.label}
-                        target="_blank"
+                        target={item.target || "_blank"}
                         rel="noopener noreferrer"
                     >
-                        <img src={item.src} alt={item.label} className="accreditation-img" />
+                        <img 
+                            id={item.imgId}
+                            src={item.src} 
+                            alt={item.label} 
+                            className="accreditation-img" 
+                            width="150" 
+                            height="150" 
+                            loading="lazy" 
+                        />
                     </a>
                 ))}
             </div>

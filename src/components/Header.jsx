@@ -38,12 +38,12 @@ const Header = () => {
             <div className="container header-content">
                 <div className="logo">
                     <a href="#">
-                        <img src={logo} alt="Square One Professional Home Inspectors" className="logo-img" />
+                        <img src={logo} alt="Square One Professional Home Inspectors" className="logo-img" width="200" height="200" fetchPriority="high" />
                     </a>
                 </div>
 
                 {/* Desktop Navigation */}
-                <nav className="desktop-nav hide-on-mobile">
+                <nav className="desktop-nav hide-on-mobile" aria-label="Desktop Navigation">
                     <ul className="nav-list">
                         {navLinks.map((link) => (
                             <li key={link.name}>
@@ -61,13 +61,21 @@ const Header = () => {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
+                <button 
+                    className="mobile-menu-btn" 
+                    onClick={toggleMenu} 
+                    aria-label="Toggle menu"
+                    aria-expanded={isMenuOpen}
+                >
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
                 {/* Mobile Navigation Overlay */}
-                <div className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
-                    <nav>
+                <div 
+                    className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}
+                    inert={!isMenuOpen ? "" : undefined}
+                >
+                    <nav aria-label="Mobile Navigation">
                         <ul className="mobile-nav-list">
                             {navLinks.map((link) => (
                                 <li key={link.name}>

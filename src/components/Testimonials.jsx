@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Star } from 'lucide-react';
+import { Star, Play, Pause } from 'lucide-react';
 import './Testimonials.css';
 
 const GoogleLogo = () => (
-    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Google">
         <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
         <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
         <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.21-1.19-.63z" fill="#FBBC05" />
@@ -88,14 +88,18 @@ const reviews = [
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+    const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
 
     useEffect(() => {
+        if (isPaused || isHoveredOrFocused) return;
+
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 3) % reviews.length);
         }, 15000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [isPaused, isHoveredOrFocused]);
 
     const displayedReviews = [
         reviews[currentIndex],
@@ -104,7 +108,14 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="section bg-background" id="reviews">
+        <section 
+            className="section bg-background" 
+            id="reviews"
+            onMouseEnter={() => setIsHoveredOrFocused(true)}
+            onMouseLeave={() => setIsHoveredOrFocused(false)}
+            onFocus={() => setIsHoveredOrFocused(true)}
+            onBlur={() => setIsHoveredOrFocused(false)}
+        >
             <div className="container">
                 <div className="google-header-wrapper text-center mb-lg">
                     <div className="google-badge">
@@ -115,21 +126,32 @@ const Testimonials = () => {
                             <span className="rating-score">5.0</span>
                             <div className="stars flex gap-xs">
                                 {[...Array(5)].map((_, i) => (
-                                    <Star key={i} size={16} fill="#FFD700" color="#FFD700" />
+                                    <Star key={i} size={16} fill="#FFD700" color="#FFD700" aria-hidden="true" />
                                 ))}
                             </div>
                             <span className="review-count">Based on 150+ reviews</span>
                         </div>
                     </div>
                     <h2 className="text-primary mt-sm">Client Reviews</h2>
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=Square+One+Professional+Home+Inspectors+Levittown+NY"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-outline mt-sm"
-                    >
-                        Write a Review
-                    </a>
+                    <div className="flex gap-sm justify-center items-center flex-wrap">
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Square+One+Professional+Home+Inspectors+Levittown+NY"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-outline mt-sm"
+                        >
+                            Write a Review
+                        </a>
+                        <button
+                            type="button"
+                            className="btn btn-outline mt-sm flex items-center gap-xs"
+                            onClick={() => setIsPaused(!isPaused)}
+                            aria-label={isPaused ? "Play reviews auto-rotation" : "Pause reviews auto-rotation"}
+                        >
+                            {isPaused ? <Play size={16} /> : <Pause size={16} />}
+                            <span>{isPaused ? "Play Reviews" : "Pause"}</span>
+                        </button>
+                    </div>
                 </div>
 
                 <div className="reviews-grid grid">
@@ -149,7 +171,7 @@ const Testimonials = () => {
                             </div>
                             <div className="review-stars flex gap-xs mb-sm">
                                 {[...Array(review.stars)].map((_, i) => (
-                                    <Star key={i} size={14} fill="#FFD700" color="#FFD700" />
+                                    <Star key={i} size={14} fill="#FFD700" color="#FFD700" aria-hidden="true" />
                                 ))}
                             </div>
                             <p className="review-text">"{review.text}"</p>

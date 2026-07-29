@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-content text-center">
                     <div className="footer-info">
-                        <h4 className="footer-name">Vincent Fundaro <a href="tel:5162429556" className="footer-link">(516)242-9556</a></h4>
+                        <h3 className="footer-name">Vincent Fundaro <a href="tel:5162429556" className="footer-link">(516)242-9556</a></h3>
                         <p className="footer-address">
                             <a href="https://maps.google.com/?q=11+Starlight+Lane,+Levittown,+NY+11756" target="_blank" rel="noopener noreferrer" className="footer-link">11 Starlight Lane, Levittown, NY 11756</a><br />
                             <a href="https://maps.google.com/?q=510+Drew+Street,+Brooklyn,+NY+11208" target="_blank" rel="noopener noreferrer" className="footer-link">510 Drew Street, Brooklyn, NY 11208</a>
@@ -22,7 +22,16 @@ const Footer = () => {
 
                     <div className="footer-bottom mt-lg">
                         <p>&copy; {new Date().getFullYear()} Square One Professional Home Inspectors</p>
-                        <p className="footer-credit mt-xs">Website by MusicPane Media</p>
+                        <p className="footer-credit mt-xs">
+                            <a 
+                                href="https://musicpanemedia.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="footer-credit-link"
+                            >
+                                Website by MusicPane Media
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>

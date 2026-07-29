@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1} style={{ outline: 'none' }}>
         <Hero />
 
         <TrustStats />

@@ -43,36 +43,36 @@ const StatCounter = ({ end, duration = 2000, suffix = "" }) => {
 
 const TrustStats = () => {
     return (
-        <section className="trust-stats bg-white">
+        <div className="trust-stats bg-white">
             <div className="container">
                 <div className="stats-grid">
-                    <div className="stat-item">
-                        <span className="stat-number">
+                    <div className="stat-item" aria-label="15+ Years Experience">
+                        <span className="stat-number" aria-hidden="true">
                             <StatCounter end={15} suffix="+" />
                         </span>
-                        <span className="stat-label">Years Experience</span>
+                        <span className="stat-label" aria-hidden="true">Years Experience</span>
                     </div>
-                    <div className="stat-item">
-                        <span className="stat-number">
+                    <div className="stat-item" aria-label="2000+ Inspections Done">
+                        <span className="stat-number" aria-hidden="true">
                             <StatCounter end={2000} suffix="+" />
                         </span>
-                        <span className="stat-label">Inspections Done</span>
+                        <span className="stat-label" aria-hidden="true">Inspections Done</span>
                     </div>
-                    <div className="stat-item">
-                        <span className="stat-number" style={{ color: '#f59e0b' }}>
+                    <div className="stat-item" aria-label="5.0 Google Rating">
+                        <span className="stat-number" style={{ color: '#b45309' }} aria-hidden="true">
                             5.0
                         </span>
-                        <span className="stat-label">Google Rating</span>
+                        <span className="stat-label" aria-hidden="true">Google Rating</span>
                     </div>
-                    <div className="stat-item">
-                        <span className="stat-number">
+                    <div className="stat-item" aria-label="100% Client Focus">
+                        <span className="stat-number" aria-hidden="true">
                             <StatCounter end={100} suffix="%" />
                         </span>
-                        <span className="stat-label">Client Focus</span>
+                        <span className="stat-label" aria-hidden="true">Client Focus</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

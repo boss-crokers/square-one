@@ -63,7 +63,7 @@ const InteractiveHouse = () => {
 
                 <div className="house-diagram-wrapper">
                     <div className="house-diagram-container">
-                        <img src={houseDiagram} alt="House Inspection Diagram" className="house-image" />
+                        <img src={houseDiagram} alt="House Inspection Diagram" className="house-image" width="800" height="600" loading="lazy" />
 
                         {hotspots.map((spot) => (
                             <button

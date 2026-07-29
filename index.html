@@ -5,29 +5,35 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="home inspector Long Island, home inspection Long Island, best home inspector Nassau County, Suffolk County home inspection, Queens home inspector, Brooklyn home inspection, radon testing Long Island, termite inspection Long Island, certified master inspector NY, pre-purchase home inspection" />
   <meta name="description"
-    content="Square One Home Inspectors - Professional, licensed home inspection services in Long Island, Queens, Brooklyn, and New York. Same day reports." />
+    content="Professional, licensed home inspection services in Long Island, NY. Square One offers expert inspections in Nassau, Suffolk, Queens & Brooklyn. Same-day reports & certified master inspectors." />
   <link rel="canonical" href="https://squareonehomeinspectors.com/" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#0A192F" />
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://squareonehomeinspectors.com/" />
-  <meta property="og:title" content="Square One Home Inspectors | Long Island & NY" />
+  <meta property="og:title" content="Best Home Inspector Long Island & NY | Square One Home Inspection" />
   <meta property="og:description"
-    content="Professional, licensed home inspection services in Long Island, Queens, Brooklyn, and New York. Same day reports provided." />
+    content="Looking for a professional home inspector in Long Island? Square One offers licensed home inspections, termite, and radon testing across NY. Certified Master Inspectors." />
   <meta property="og:image" content="https://squareonehomeinspectors.com/og-image.jpg" />
+  <meta property="og:image:alt" content="Square One Professional Home Inspectors Logo and Service Banner" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://squareonehomeinspectors.com/" />
-  <meta property="twitter:title" content="Square One Home Inspectors | Long Island & NY" />
+  <meta property="twitter:title" content="Best Home Inspector Long Island & NY | Square One" />
   <meta property="twitter:description"
-    content="Professional, licensed home inspection services in Long Island, Queens, Brooklyn, and New York. Same day reports provided." />
+    content="Expert home inspection services in Long Island & NY. Same-day reports from Certified Master Inspectors. Secure your peace of mind." />
   <meta property="twitter:image" content="https://squareonehomeinspectors.com/og-image.jpg" />
 
-  <title>Square One Home Inspectors | Long Island & NY</title>
+  <title>Best Home Inspector Long Island & NY | Square One Home Inspection</title>
 
   <!-- Schema.org for Local Business -->
   <script type="application/ld+json">
@@ -35,12 +41,48 @@
       "@context": "https://schema.org",
       "@type": "HomeAndConstructionBusiness",
       "name": "Square One Professional Home Inspectors",
+      "alternateName": "Square One Home Inspection",
+      "description": "Square One provides professional, licensed home inspection services in Long Island, Queens, Brooklyn, and Manhattan. Specializing in pre-purchase inspections, termite testing, and radon monitoring.",
       "image": "https://squareonehomeinspectors.com/assets/logo.png",
       "@id": "https://squareonehomeinspectors.com",
       "url": "https://squareonehomeinspectors.com",
       "telephone": "+1-516-242-9556",
       "email": "squareoneinspect@aol.com",
       "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Home Inspection Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full House Inspection"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Termite & Wood Destroying Insect Inspection"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Radon Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pre-Listing Inspection"
+            }
+          }
+        ]
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
@@ -51,7 +93,10 @@
       "review": [
         {
           "@type": "Review",
-          "author": "John D.",
+          "author": {
+            "@type": "Person",
+            "name": "John D."
+          },
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5"
@@ -60,12 +105,18 @@
         }
       ],
       "areaServed": [
-        "Levittown, NY",
-        "Nassau County",
-        "Suffolk County",
-        "Queens",
-        "Brooklyn",
-        "Manhattan"
+        { "@type": "City", "name": "Levittown" },
+        { "@type": "AdministrativeArea", "name": "Nassau County" },
+        { "@type": "AdministrativeArea", "name": "Suffolk County" },
+        { "@type": "City", "name": "Queens" },
+        { "@type": "City", "name": "Brooklyn" },
+        { "@type": "City", "name": "Manhattan" },
+        { "@type": "City", "name": "Long Beach" },
+        { "@type": "City", "name": "Great Neck" },
+        { "@type": "City", "name": "Freeport" },
+        { "@type": "City", "name": "Valley Stream" },
+        { "@type": "City", "name": "Westbury" },
+        { "@type": "City", "name": "Glen Cove" }
       ],
       "address": {
         "@type": "PostalAddress",
@@ -101,6 +152,56 @@
       ]
     }
     </script>
+
+  <!-- FAQPage Schema (static for reliable crawling) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to be present during the inspection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While it's not required, we highly recommend it. Being there allows you to see what the inspector sees, ask questions in real-time, and get a better understanding of the home's condition than a report alone can provide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a typical inspection take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most inspections take between 2 to 3 hours, depending on the size, age, and condition of the property. We take our time to ensure nothing is overlooked."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When will I receive my inspection report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We know time is of the essence in real estate transactions. You will receive your detailed, digital report on the same day as the inspection, typically within a few hours of completion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the inspection reveals problems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No house is perfect, not even brand new ones. If we find issues, it doesn't mean you shouldn't buy the house. It gives you the knowledge to negotiate price or repairs, or simply to know what potential costs generally lie ahead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you licensed and insured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, absolutely. Vincent Fundaro is a NY State Licensed Home Inspector (#16000066020) and fully insured. We are also InterNACHI Certified, adhering to the highest standards in the industry."
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>

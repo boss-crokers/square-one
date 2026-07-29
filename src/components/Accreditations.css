@@ -38,6 +38,11 @@
     opacity: 0.9;
 }
 
+.accreditation-item:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
 .accreditation-img {
     max-width: 100%;
     max-height: 100%;

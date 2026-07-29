@@ -124,10 +124,14 @@ const MaintenanceResources = () => {
 
                 <div className="resources-wrapper">
                     {/* Tabs / Navigation */}
-                    <div className="season-tabs">
+                    <div className="season-tabs" role="tablist" aria-label="Seasonal home maintenance checklists">
                         {seasonalData.map((season) => (
                             <button
                                 key={season.id}
+                                id={`tab-${season.id}`}
+                                role="tab"
+                                aria-selected={activeTab === season.id}
+                                aria-controls={`panel-${season.id}`}
                                 className={`season-tab ${activeTab === season.id ? 'active' : ''}`}
                                 onClick={() => setActiveTab(season.id)}
                                 style={{
@@ -135,7 +139,7 @@ const MaintenanceResources = () => {
                                     borderColor: activeTab === season.id ? season.color : 'transparent'
                                 }}
                             >
-                                <span className="tab-icon" style={{ color: activeTab === season.id ? season.color : '#94A3B8' }}>
+                                <span className="tab-icon" style={{ color: activeTab === season.id ? season.color : '#94A3B8' }} aria-hidden="true">
                                     {season.icon}
                                 </span>
                                 <span className="tab-title">{season.title.split(' ')[0]}</span>
@@ -148,11 +152,15 @@ const MaintenanceResources = () => {
                         {seasonalData.map((season) => (
                             <div
                                 key={season.id}
+                                id={`panel-${season.id}`}
+                                role="tabpanel"
+                                aria-labelledby={`tab-${season.id}`}
                                 className={`resource-card ${activeTab === season.id ? 'active' : ''}`}
+                                inert={activeTab !== season.id ? "" : undefined}
                             >
                                 <div className="card-header" style={{ backgroundColor: season.bg }}>
                                     <h3 style={{ color: '#0F172A' }}>{season.title}</h3>
-                                    <div className="season-icon-large" style={{ color: season.color }}>
+                                    <div className="season-icon-large" style={{ color: season.color }} aria-hidden="true">
                                         {season.icon}
                                     </div>
                                 </div>

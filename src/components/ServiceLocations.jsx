@@ -24,9 +24,9 @@ const ServiceLocations = () => {
                     <div className="locations-list-container">
                         <div className="locations-grid">
                             {locations.map((loc, index) => (
-                                <a key={index} href={`#${loc.toLowerCase().replace(/\s+/g, '-')}`} className="location-link">
+                                <span key={index} className="location-link">
                                     {loc}
-                                </a>
+                                </span>
                             ))}
                         </div>
                     </div>

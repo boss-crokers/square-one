@@ -56,14 +56,14 @@
 
 .logo {
     position: absolute;
-    top: -36px;
+    top: -40px;
     left: 0;
     z-index: 20;
-    transition: top var(--transition-medium);
+    transition: all var(--transition-medium);
 }
 
 .header.scrolled .logo {
-    top: 0;
+    top: 6px;
 }
 
 .logo a {
@@ -84,12 +84,10 @@
     padding: 0;
     box-shadow: none;
     border-radius: 0;
-    padding-top: 5px;
 }
 
 .logo-img {
-    height: 364px;
-    /* Increased another 30% from 280px */
+    height: 420px;
     width: auto;
     object-fit: contain;
     transition: all var(--transition-medium);
@@ -106,26 +104,25 @@
 
 @media (max-width: 768px) {
     .logo {
-        top: -20px;
+        top: -25px;
     }
 
     .logo-img {
-        height: 180px;
+        height: 260px;
         max-width: 80vw;
-        /* Increased from 143px and constrained width */
     }
 
     .header.scrolled .logo {
-        left: 20px;
+        left: 10px;
+        top: 6px;
     }
 
     .header.scrolled .logo-img {
-        height: 75px;
+        height: 60px;
     }
 
     .logo a {
-        padding: 4px 8px;
-        /* Reduced padding for cleaner look */
+        padding: 2px 4px;
     }
 }
 
@@ -135,8 +132,12 @@
     }
 
     .logo-img {
-        height: 160px;
+        height: 200px;
         max-width: 80vw;
+    }
+
+    .header.scrolled .logo-img {
+        height: 55px;
     }
 }
 
@@ -194,12 +195,14 @@
     background-color: var(--color-white);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     padding: 100px 40px;
-    transition: right var(--transition-medium);
+    transition: right var(--transition-medium), visibility var(--transition-medium);
     z-index: 1001;
+    visibility: hidden; /* Hide offscreen content from keyboard/screen readers */
 }
 
 .mobile-nav.open {
     right: 0;
+    visibility: visible;
 }
 
 .mobile-nav-list {

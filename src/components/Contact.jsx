@@ -16,7 +16,7 @@ const Contact = () => {
                             <li>
                                 <div className="icon-box"><Phone size={20} /></div>
                                 <div>
-                                    <h4>Phone</h4>
+                                    <h3>Phone</h3>
                                     <a href="tel:5162429556">(516) 242-9556</a>
                                 </div>
                             </li>
@@ -24,14 +24,14 @@ const Contact = () => {
                             <li>
                                 <div className="icon-box"><MapPin size={20} /></div>
                                 <div>
-                                    <h4>Service Areas</h4>
+                                    <h3>Service Areas</h3>
                                     <p>Long Island, Queens, Brooklyn, Manhattan & Nassau County</p>
                                 </div>
                             </li>
                             <li>
                                 <div className="icon-box"><Clock size={20} /></div>
                                 <div>
-                                    <h4>Hours</h4>
+                                    <h3>Hours</h3>
                                     <p>Mon - Sun: 8:00 AM - 8:00 PM</p>
                                 </div>
                             </li>
@@ -50,8 +50,8 @@ const Contact = () => {
                                 <label htmlFor="phone">Phone Number</label>
                             </div>
                             <div className="form-group">
-                                <label>Service Needed</label>
-                                <select name="service">
+                                <label htmlFor="service">Service Needed</label>
+                                <select id="service" name="service">
                                     <option>Home Inspection</option>
                                     <option>Commercial Inspection</option>
                                     <option>Mold Testing</option>

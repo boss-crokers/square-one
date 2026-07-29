@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import { Home } from 'lucide-react';
 import './NotFound.css';
 
 const NotFound = () => {
+    useEffect(() => {
+        document.title = "Page Not Found | Square One Professional Home Inspectors";
+    }, []);
+
     return (
         <div className="not-found-container">
             <div className="content text-center">

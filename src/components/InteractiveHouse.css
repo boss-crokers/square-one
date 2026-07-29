@@ -49,6 +49,11 @@
     animation: none;
 }
 
+.hotspot:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 .hotspot-modal {
     position: absolute;
     width: 280px;
@@ -119,6 +124,11 @@
 
 .close-btn:hover {
     color: var(--color-primary);
+}
+
+.close-btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 .hotspot-content p {

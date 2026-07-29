@@ -34,20 +34,6 @@ const FAQ = () => {
 
     return (
         <section className="section bg-white" id="faq">
-            <script type="application/ld+json">
-                {JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "FAQPage",
-                    "mainEntity": faqs.map(faq => ({
-                        "@type": "Question",
-                        "name": faq.question,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": faq.answer
-                        }
-                    }))
-                })}
-            </script>
             <div className="container">
                 <div className="section-header text-center">
                     <h2 className="text-primary">Frequently Asked Questions</h2>
@@ -61,15 +47,28 @@ const FAQ = () => {
                         <div
                             className={`faq-item ${openIndex === index ? 'open' : ''}`}
                             key={index}
-                            onClick={() => toggleFAQ(index)}
                         >
-                            <div className="faq-question">
-                                <h3>{faq.question}</h3>
-                                <span className="faq-icon">
-                                    {openIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                                </span>
-                            </div>
-                            <div className="faq-answer">
+                            <h3 className="faq-question-heading">
+                                <button
+                                    type="button"
+                                    className="faq-question-btn"
+                                    onClick={() => toggleFAQ(index)}
+                                    aria-expanded={openIndex === index}
+                                    aria-controls={`faq-answer-${index}`}
+                                    id={`faq-btn-${index}`}
+                                >
+                                    <span className="faq-question-text">{faq.question}</span>
+                                    <span className="faq-icon" aria-hidden="true">
+                                        {openIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                                    </span>
+                                </button>
+                            </h3>
+                            <div
+                                id={`faq-answer-${index}`}
+                                role="region"
+                                aria-labelledby={`faq-btn-${index}`}
+                                className="faq-answer"
+                            >
                                 <p>{faq.answer}</p>
                             </div>
                         </div>
