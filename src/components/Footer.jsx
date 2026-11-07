@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -15,18 +16,28 @@ const Footer = () => {
                         <p className="footer-nachi">InterNACHI Certified Professional Home Inspector &reg;</p>
                     </div>
 
+                    <nav className="footer-pillar-nav" aria-label="Footer">
+                        <ul className="footer-nav-list">
+                            <li><Link to="/" className="footer-link">Home</Link></li>
+                            <li><Link to="/services/home-inspection-long-island" className="footer-link">Complete Home Inspection Guide</Link></li>
+                            <li><Link to="/services/termite-inspection-long-island" className="footer-link">Termite &amp; WDI Inspection</Link></li>
+                            <li><Link to="/services/radon-testing-long-island" className="footer-link">Radon Testing Long Island</Link></li>
+                            <li><Link to="/blog" className="footer-link">Inspection Blog</Link></li>
+                        </ul>
+                    </nav>
+
                     <div className="footer-legal mt-lg">
                         <p>Square One Professional Home Inspectors is licensed by the NYS Department of State. Home Inspectors may only report on readily accessible and observed conditions as outlined in Article 12 B of the Real Property Law and the regulations promulgated thereunder including the Code of Ethics and Regulations and the Standards of Practice as provided in Title 19 NYCRR Subparts 197-4 and 197-5 et seq.</p>
                         <p className="mt-xs">Home inspectors are not permitted to provide engineering or architectural services. A home inspection is a visual assessment and is not a warranty or guarantee of the home's future condition.</p>
                     </div>
 
                     <div className="footer-bottom mt-lg">
-                        <p>&copy; {new Date().getFullYear()} Square One Professional Home Inspectors</p>
+                        <p>&copy; {new Date().getFullYear()} <Link to="/" className="footer-link">Square One Professional Home Inspectors</Link></p>
                         <p className="footer-credit mt-xs">
-                            <a 
-                                href="https://musicpanemedia.com/" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <a
+                                href="https://musicpanemedia.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="footer-credit-link"
                             >
                                 Website by MusicPane Media

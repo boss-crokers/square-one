@@ -39,6 +39,23 @@
     font-weight: 500;
 }
 
+.footer-pillar-nav {
+    width: 100%;
+    max-width: 900px;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: balance;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
 .footer-legal {
     max-width: 800px;
     font-size: 0.75rem;

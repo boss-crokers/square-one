@@ -9,7 +9,7 @@ const About = () => {
                 <div className="about-content grid">
                     <div className="about-image-wrapper">
                         {/* About Image */}
-                        <img src={vinnyImg} alt="Vinny - Professional Inspector" className="about-image" width="600" height="600" loading="lazy" />
+                        <img src={vinnyImg} alt="Vinny - Professional Inspector" className="about-image" width="400" height="600" loading="lazy" />
                     </div>
 
                     <div className="about-text">

@@ -68,6 +68,96 @@
     margin: 0 auto;
 }
 
+.services-pillar-banner {
+    margin-block-start: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: var(--color-white);
+    border-radius: 12px;
+    padding: 2rem 2.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: safe center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-inline-start: 5px solid var(--color-accent);
+    box-shadow: 0 12px 30px rgba(10, 25, 47, 0.14);
+}
+
+.services-pillar-banner-text {
+    flex: 1 1 480px;
+    min-inline-size: 0;
+}
+
+.services-pillar-tag {
+    display: inline-flex;
+    align-items: safe center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background-color: rgba(255, 215, 0, 0.15);
+    color: var(--color-accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-block-end: 0.65rem;
+}
+
+.services-pillar-banner-text h3 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-block-end: 0.5rem;
+}
+
+.services-pillar-banner-text p {
+    color: rgba(230, 241, 255, 0.88);
+    font-size: 0.98rem;
+    margin-block-end: 0.85rem;
+}
+
+.services-cluster-quicklinks {
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: balance;
+    gap: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.services-cluster-quicklinks a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.services-cluster-quicklinks a:hover {
+    color: var(--color-white);
+}
+
+.service-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-block-start: 0.75rem;
+}
+
+.service-guide-link {
+    display: inline-block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    background-color: rgba(255, 215, 0, 0.28);
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+    inline-size: fit-content;
+    border: 1px solid rgba(133, 88, 0, 0.25);
+}
+
+.service-guide-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+}
+
 
 
 /* Modal Overlay: Scrollable container */
@@ -187,6 +277,14 @@
 
 
 @media (max-width: 768px) {
+    .services-pillar-banner {
+        padding: 1.5rem;
+    }
+
+    .services-pillar-banner-text {
+        flex-basis: 100%;
+    }
+
     .modal-body {
         grid-template-columns: 1fr;
     }

@@ -127,7 +127,8 @@ a {
   transition: var(--transition-fast);
 }
 
-ul {
+ul,
+ol {
   list-style: none;
 }
 
