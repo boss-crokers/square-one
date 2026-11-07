@@ -23,6 +23,7 @@ import SEOHead from './components/SEOHead';
 import HomeInspectionPillar from './pages/HomeInspectionPillar';
 import TermiteInspectionCluster from './pages/TermiteInspectionCluster';
 import RadonTestingCluster from './pages/RadonTestingCluster';
+import RegionalLocationPillar from './pages/RegionalLocationPillar';
 import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 
@@ -96,6 +97,7 @@ export const AppRoutes = () => (
             <Route path="/services/home-inspection-long-island" element={<HomeInspectionPillar />} />
             <Route path="/services/termite-inspection-long-island" element={<TermiteInspectionCluster />} />
             <Route path="/services/radon-testing-long-island" element={<RadonTestingCluster />} />
+            <Route path="/areas-served/:regionSlug" element={<RegionalLocationPillar />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />

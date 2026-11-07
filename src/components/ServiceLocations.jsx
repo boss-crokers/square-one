@@ -1,13 +1,6 @@
+import { Link } from 'react-router-dom';
+import { serviceLocationLinks } from '../data/locationsData';
 import './ServiceLocations.css';
-
-const locations = [
-    "Long Island", "Brooklyn", "Queens", "Manhattan",
-    "Levittown", "Nassau County", "Suffolk County",
-    "New York City", "Valley Stream", "Commack", "Jamaica",
-    "Flushing", "Elmont", "Westbury", "Great Neck", "Glen Cove",
-    "Long Beach", "Roosevelt", "Lynbrook", "Freeport",
-    "Freshmeadows", "Forest Hills", "Parkslope", "Sheepshead Bay"
-];
 
 const ServiceLocations = () => {
     return (
@@ -23,10 +16,10 @@ const ServiceLocations = () => {
                 <div className="service-locations-wrapper grid-2-col">
                     <div className="locations-list-container">
                         <div className="locations-grid">
-                            {locations.map((loc, index) => (
-                                <span key={index} className="location-link">
-                                    {loc}
-                                </span>
+                            {serviceLocationLinks.map((loc) => (
+                                <Link key={loc.name} to={loc.to} className="location-link">
+                                    {loc.name}
+                                </Link>
                             ))}
                         </div>
                     </div>

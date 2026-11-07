@@ -335,19 +335,25 @@ const HomeInspectionPillar = () => {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">Nassau County (Levittown, Garden City, Great Neck, Massapequa)</th>
+                                            <th scope="row">
+                                                <Link to="/areas-served/nassau-county" className="inline-link">Nassau County</Link> (Levittown, Garden City, Great Neck, Massapequa)
+                                            </th>
                                             <td>Post-War Capes, Expanded Ranches, Split-Levels, Tudors</td>
                                             <td>Leaking in-slab copper radiant heat coils, buried/abandoned oil tanks, unpermitted 2nd-story dormers, Federal Pacific panels</td>
                                             <td>Thermal Imaging, <Link to="/services/termite-inspection-long-island" className="inline-link">Termite (WDI)</Link>, <Link to="/services/radon-testing-long-island" className="inline-link">Radon Testing</Link></td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Suffolk County (Huntington, Commack, Babylon, Islip)</th>
+                                            <th scope="row">
+                                                <Link to="/areas-served/suffolk-county" className="inline-link">Suffolk County</Link> (Huntington, Commack, Babylon, Islip)
+                                            </th>
                                             <td>Colonials, High-Ranches, Waterfront Contemporaries</td>
                                             <td>High Eastern Subterranean Termite activity in sandy soils, elevated basement radon, private cesspool/septic wear, coastal salt corrosion</td>
                                             <td><Link to="/services/termite-inspection-long-island" className="inline-link">Termite (WDI) NPMA-33</Link>, <Link to="/services/radon-testing-long-island" className="inline-link">48-Hr Radon Monitor</Link>, Mold/Water Testing</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Queens &amp; Brooklyn (Forest Hills, Flushing, Park Slope, Bay Ridge)</th>
+                                            <th scope="row">
+                                                <Link to="/areas-served/nyc-queens-brooklyn" className="inline-link">Queens &amp; Brooklyn</Link> (Forest Hills, Flushing, Park Slope, Bay Ridge)
+                                            </th>
                                             <td>Brick Attached Multi-Family, Pre-War Brownstones, Semi-Detached</td>
                                             <td>Flat roof ponding &amp; parapet flashing leaks, aging steam boilers, cloth/knob-and-tube wiring, shared party-wall moisture</td>
                                             <td>Infrared Roof/Wall Scan, Sewer/Drain Check, Lead Water Testing</td>

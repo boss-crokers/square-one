@@ -2,6 +2,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { AppRoutes } from './App';
 import { blogPosts } from './data/blogData';
+import { regionalPillars } from './data/locationsData';
 
 export function render(url) {
     return renderToString(
@@ -106,6 +107,40 @@ export const routesToPrerender = [
         title: 'Long Island Home Inspection Blog & Buyer Guides | Square One NY',
         description: 'Expert home inspection articles, checklists, and local Long Island property guides by Certified Master Inspector Vinny Fundaro. Serving Nassau, Suffolk, Queens & Brooklyn.'
     },
+    ...Object.values(regionalPillars).map((region) => ({
+        path: `/areas-served/${region.slug}`,
+        title: region.seoTitle,
+        description: region.seoDescription,
+        jsonLd: {
+            '@context': 'https://schema.org',
+            '@graph': [
+                {
+                    '@type': 'Service',
+                    name: `${region.name} Home Inspection Services`,
+                    serviceType: 'Licensed Residential & Multi-Family Home Inspection',
+                    provider: {
+                        '@type': 'HomeAndConstructionBusiness',
+                        name: 'Square One Professional Home Inspectors',
+                        telephone: '+1-516-242-9556',
+                        url: baseUrl
+                    },
+                    areaServed: region.townsCovered,
+                    description: region.seoDescription
+                },
+                {
+                    '@type': 'FAQPage',
+                    mainEntity: region.faqs.map((faq) => ({
+                        '@type': 'Question',
+                        name: faq.q,
+                        acceptedAnswer: {
+                            '@type': 'Answer',
+                            text: faq.a
+                        }
+                    }))
+                }
+            ]
+        }
+    })),
     ...blogPosts.map((post) => ({
         path: `/blog/${post.slug}`,
         title: `${post.title} | Square One Home Inspection Blog`,

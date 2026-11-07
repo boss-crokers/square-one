@@ -22,6 +22,9 @@ const Footer = () => {
                             <li><Link to="/services/home-inspection-long-island" className="footer-link">Complete Home Inspection Guide</Link></li>
                             <li><Link to="/services/termite-inspection-long-island" className="footer-link">Termite &amp; WDI Inspection</Link></li>
                             <li><Link to="/services/radon-testing-long-island" className="footer-link">Radon Testing Long Island</Link></li>
+                            <li><Link to="/areas-served/nassau-county" className="footer-link">Nassau County</Link></li>
+                            <li><Link to="/areas-served/suffolk-county" className="footer-link">Suffolk County</Link></li>
+                            <li><Link to="/areas-served/nyc-queens-brooklyn" className="footer-link">Queens &amp; Brooklyn</Link></li>
                             <li><Link to="/blog" className="footer-link">Inspection Blog</Link></li>
                         </ul>
                     </nav>
